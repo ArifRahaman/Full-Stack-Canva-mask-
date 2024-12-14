@@ -140,7 +140,7 @@ const App = () => {
         }
       );
       setUploadedData(response.data.data);
-      localStorage.setItem("url",response.data.data.maskImageUrl);
+      localStorage.setItem("url", response.data.data.maskImageUrl);
     } catch (error) {
       console.error("Error uploading images:", error);
     }
@@ -160,22 +160,51 @@ const App = () => {
 
   return (
     <div className="app-container bg-gray-200 min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-3xl font-bold text-center text-blue-800 mb-6">
-        Image Mask Drawing Tool
+      <h1 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-4 rounded-md shadow-md mb-6">
+        🎨 Image Mask Drawing Tool
       </h1>
 
       {/* Image Upload Section */}
-      <div className="upload-section mb-6">
+      {/* <div className="upload-section mb-6">
         <input
           type="file"
           accept="image/jpeg, image/png"
           onChange={handleImageUpload}
           className="border border-gray-300 p-2 rounded-md text-lg"
         />
+      </div> */}
+      <div className="upload-section mb-6 flex flex-col items-center">
+        <label
+          htmlFor="file-upload"
+          className="cursor-pointer flex flex-col items-center justify-center border-dashed border-2 border-gray-400 p-6 rounded-md hover:bg-gray-100 transition duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-10 w-10 text-blue-600 mb-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M3 8a5 5 0 1110 0h4a3 3 0 110 6H3a3 3 0 010-6h4z" />
+          </svg>
+          <span className="text-gray-600 text-lg">
+            Drag & Drop or Click to Upload
+          </span>
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          accept="image/jpeg, image/png"
+          onChange={handleImageUpload}
+          className="hidden"
+        />
       </div>
+
       <div className="brush-size-slider flex items-center gap-4 mb-4">
-        <label htmlFor="brush-size" className="text-lg font-medium">
-          Brush Size:
+        <label
+          htmlFor="brush-size"
+          className="text-lg font-medium text-gray-700"
+        >
+          🖌️ Brush Size:
         </label>
         <input
           id="brush-size"
@@ -184,9 +213,14 @@ const App = () => {
           max="20"
           value={brushSize}
           onChange={(e) => setBrushSize(Number(e.target.value))}
-          className="slider w-40"
+          className="slider w-40 accent-blue-600"
+          style={{
+            background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${
+              (brushSize / 20) * 100
+            }%, #e5e7eb ${(brushSize / 20) * 100}%, #e5e7eb 100%)`,
+          }}
         />
-        <span className="text-lg">{brushSize}px</span>
+        <span className="text-lg font-bold text-blue-800">{brushSize}px</span>
       </div>
 
       {/* Canvas Area for Drawing */}
@@ -201,12 +235,36 @@ const App = () => {
       )}
 
       {/* Display the uploaded and processed images */}
-      {uploadedData && (
+      {/* {uploadedData && (
         <div className="image-display flex flex-col items-center mt-6">
           <ImageDisplay
             original={uploadedData.originalImageUrl}
             mask={uploadedData.maskImageUrl}
           />
+        </div>
+      )} */}
+      {uploadedData && (
+        <div className="image-display grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <div className="rounded-md shadow-lg p-4 bg-white">
+            <h3 className="text-lg font-medium text-gray-700 mb-2">
+              Original Image
+            </h3>
+            <img
+              src={uploadedData.originalImageUrl}
+              alt="Original"
+              className="rounded-md"
+            />
+          </div>
+          <div className="rounded-md shadow-lg p-4 bg-white">
+            <h3 className="text-lg font-medium text-gray-700 mb-2">
+              Mask Image
+            </h3>
+            <img
+              src={uploadedData.maskImageUrl}
+              alt="Mask"
+              className="rounded-md"
+            />
+          </div>
         </div>
       )}
     </div>
