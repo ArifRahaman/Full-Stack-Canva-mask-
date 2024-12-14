@@ -1,0 +1,95 @@
+/* .App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.upload-section {
+  margin: 20px 0;
+}
+
+.canvas-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+}
+
+.background-image {
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: 2px solid #ccc;
+}
+
+.drawing-canvas {
+  position: relative;
+  z-index: 2;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls input[type="range"] {
+  width: 200px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ddd;
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4a90e2;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.output-image {
+  width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
