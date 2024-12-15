@@ -1,31 +1,4 @@
-// import React from "react";
-// const url=localStorage.getItem("url");
-// const ImageDisplay = ({ original, mask }
-// ) => (
-  
-//   <div className="flex justify-center items-center space-x-10 p-10 bg-gray-100 min-h-screen">
-//     <div className="w-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl relative group">
-//       <div className="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition-opacity duration-300"></div>
-//       <h3 className="text-3xl font-bold text-center text-white p-4 bg-gradient-to-r from-blue-500 to-indigo-600">Original Image</h3>
-
-//       <img src={original} alt="Original" className="w-full h-auto rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300" />
-    
-
-
 import React from "react";
-const downloadImage = () => {
-  const imageUrl = localStorage.getItem("url");
-  if (imageUrl) {
-      const link = document.createElement("a");
-      link.href = imageUrl;
-      link.download = "downloaded-image"; // Set a filename for the downloaded file
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-  } else {
-      console.error("No URL found in localStorage.");
-  }
-};
 const url=localStorage.getItem("url");
 const ImageDisplay = ({ original, mask }) => (
   <div className="flex justify-center items-center space-x-10 p-10 bg-gray-100 min-h-screen">
@@ -57,7 +30,6 @@ const ImageDisplay = ({ original, mask }) => (
       />
 
     </div>
-    <button onClick={downloadImage}>Download Image</button>
 
 
   </div>
