@@ -35,6 +35,11 @@ Install dependencies
 ```bash
   npm install
 ```
+Please be carefull , if any kind of dependency issue is occured then please use version 17 of react as other dependencies can be conflicted with canvas
+```
+npm install react@17.0.2 react-dom@17.0.2
+```
+and 
 
 Start the server
 
