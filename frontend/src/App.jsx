@@ -1,111 +1,8 @@
-// // import React, { useState } from "react";
-// // import CanvasArea from "./components/CanvasArea";
-// // import ImageDisplay from "./components/ImageDisplay";
-// // import "./App.css";
-
-// // const App = () => {
-// //   const [image, setImage] = useState(null);
-// //   const [maskImage, setMaskImage] = useState(null);
-// //   const [brushDiameter, setBrushDiameter] = useState(10); // Default diameter
-
-// //   const handleImageUpload = (e) => {
-// //     const file = e.target.files[0];
-// //     if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
-// //       const reader = new FileReader();
-// //       reader.onload = () => setImage(reader.result);
-// //       reader.readAsDataURL(file);
-// //     }
-// //   };
-
-// //   const handleMaskExport = (maskDataUrl) => {
-// //     setMaskImage(maskDataUrl);
-// //   };
-
-// //   return (
-// //     <div className="app-container">
-// //       <h1>Image Mask Drawing Tool</h1>
-// //       <input type="file" accept="image/jpeg, image/png" onChange={handleImageUpload} />
-// //       {image && (
-// //         <CanvasArea image={image} onExportMask={handleMaskExport} />
-// //       )}
-// //       {image && maskImage && (
-// //         <ImageDisplay original={image} mask={maskImage} />
-// //       )}
-// //     </div>
-// //   );
-// // };
-
-// // export default App;
-
-// import React, { useState } from "react";
-// import CanvasArea from "./components/CanvasArea";
-// import ImageDisplay from "./components/ImageDisplay";
-// import axios from "axios";
-// import "./App.css";
-
-// const App = () => {
-//   const [image, setImage] = useState(null);
-//   const [maskImage, setMaskImage] = useState(null);
-//   const [uploadedData, setUploadedData] = useState(null);
-
-//   const handleImageUpload = (e) => {
-//     const file = e.target.files[0];
-//     if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
-//       const reader = new FileReader();
-//       reader.onload = () => setImage(reader.result);
-//       reader.readAsDataURL(file);
-//     }
-//   };
-
-//   const handleMaskExport = async (maskDataUrl) => {
-//     setMaskImage(maskDataUrl);
-
-//     const formData = new FormData();
-//     formData.append("original", dataURLtoBlob(image));
-//     formData.append("mask", dataURLtoBlob(maskDataUrl));
-
-//     try {
-//       const response = await axios.post("http://localhost:5000/upload", formData, {
-//         headers: { "Content-Type": "multipart/form-data" },
-//       });
-//       setUploadedData(response.data.data);
-//     } catch (error) {
-//       console.error("Error uploading images:", error);
-//     }
-//   };
-
-//   const dataURLtoBlob = (dataURL) => {
-//     const byteString = atob(dataURL.split(",")[1]);
-//     const mimeString = dataURL.split(",")[0].split(":")[1].split(";")[0];
-//     const ab = new ArrayBuffer(byteString.length);
-//     const ia = new Uint8Array(ab);
-//     for (let i = 0; i < byteString.length; i++) {
-//       ia[i] = byteString.charCodeAt(i);
-//     }
-//     return new Blob([ab], { type: mimeString });
-//   };
-
-//   return (
-//     <div className="app-container">
-//       <h1>Image Mask Drawing Tool</h1>
-//       <input type="file" accept="image/jpeg, image/png" onChange={handleImageUpload} />
-//       {image && <CanvasArea image={image} onExportMask={handleMaskExport} />}
-//       {uploadedData && (
-//         <ImageDisplay
-//           original={uploadedData.originalImageUrl}
-//           mask={uploadedData.maskImageUrl}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
 import React, { useState } from "react";
 import CanvasArea from "./components/CanvasArea";
 import ImageDisplay from "./components/ImageDisplay";
 import axios from "axios";
-import "./App.css";
+
 
 const App = () => {
   const [image, setImage] = useState(null);
@@ -159,20 +56,12 @@ const App = () => {
   };
 
   return (
-    <div className="app-container bg-gray-200 min-h-screen flex flex-col items-center justify-center p-4">
+    <div className="app-container bg-gradient-to-r from-green-200 to-blue-300 min-h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-extrabold text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-4 rounded-md shadow-md mb-6">
         🎨 Image Mask Drawing Tool
       </h1>
 
       {/* Image Upload Section */}
-      {/* <div className="upload-section mb-6">
-        <input
-          type="file"
-          accept="image/jpeg, image/png"
-          onChange={handleImageUpload}
-          className="border border-gray-300 p-2 rounded-md text-lg"
-        />
-      </div> */}
       <div className="upload-section mb-6 flex flex-col items-center">
         <label
           htmlFor="file-upload"
@@ -235,36 +124,12 @@ const App = () => {
       )}
 
       {/* Display the uploaded and processed images */}
-      {/* {uploadedData && (
+      {uploadedData && (
         <div className="image-display flex flex-col items-center mt-6">
           <ImageDisplay
             original={uploadedData.originalImageUrl}
             mask={uploadedData.maskImageUrl}
           />
-        </div>
-      )} */}
-      {uploadedData && (
-        <div className="image-display grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-          <div className="rounded-md shadow-lg p-4 bg-white">
-            <h3 className="text-lg font-medium text-gray-700 mb-2">
-              Original Image
-            </h3>
-            <img
-              src={uploadedData.originalImageUrl}
-              alt="Original"
-              className="rounded-md"
-            />
-          </div>
-          <div className="rounded-md shadow-lg p-4 bg-white">
-            <h3 className="text-lg font-medium text-gray-700 mb-2">
-              Mask Image
-            </h3>
-            <img
-              src={uploadedData.maskImageUrl}
-              alt="Mask"
-              className="rounded-md"
-            />
-          </div>
         </div>
       )}
     </div>
