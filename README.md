@@ -3,7 +3,7 @@
 
 A brief description of what this project does and who it's for
 
-### **Objective**
+### Objective
 
     Create a simple image inpainting widget where users can:
 
@@ -67,3 +67,12 @@ To run this project, you will need to add the following environment variables to
 `CLOUDINARY_API_SECRET=`
 
 Here  Please visit https://cloudinary.com/ for more details to get the env variables.
+
+## Libraries,language and framworks used
+### Node.js
+### React.js
+### MongoDB
+### Express.js
+### Nodemon
+### Javascript
+### Tailwind CSS
