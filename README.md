@@ -11,7 +11,7 @@ A brief description of what this project does and who it's for
       2. Draw on the image to create a mask.
       3. Export and display the original image and the mask image as a pair.
 
-## LIve link:
+## Live link:
 ```
 https://frontend-msk.vercel.app/
 
