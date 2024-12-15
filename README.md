@@ -76,3 +76,10 @@ Here  Please visit https://cloudinary.com/ for more details to get the env varia
 ### Nodemon
 ### Javascript
 ### Tailwind CSS
+
+## Screenshots  
+![Screenshot from 2024-12-15 16-32-57](https://github.com/user-attachments/assets/d175e01b-19c1-4c1d-abe8-c66f08ad83f8)
+
+![Screenshot from 2024-12-15 16-47-46](https://github.com/user-attachments/assets/d2fc9825-78c9-4fc5-ab50-ebd5b900959b)
+
+![Screenshot from 2024-12-15 16-46-41](https://github.com/user-attachments/assets/7b2903b6-00b5-4050-bc0f-3366940b43cc)
