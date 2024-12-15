@@ -10,19 +10,7 @@
 
 //       <img src={original} alt="Original" className="w-full h-auto rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300" />
     
-//     </div>
-//     <div>Download the image
-//       <button>Download here</button>
-//     </div>
-//     <div className="w-1/2 bg-gradient-to-r from-black to-black shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl relative group">
-//       <div className="absolute inset-0 bg-black opacity-25 group-hover:opacity-50 transition-opacity duration-300"></div>
-//       <h3 className="text-3xl font-bold text-center text-white p-4 bg-gradient-to-r from-purple-500 to-pink-600">Mask Image</h3>
-//       <img src={mask} alt="Mask" className="w-full h-auto rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300" />
-//     </div>
-//   </div>
-// );
 
-// export default ImageDisplay;
 
 import React from "react";
 const downloadImage = () => {
