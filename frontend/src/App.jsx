@@ -43,7 +43,7 @@ const App = () => {
     }
   };
 
-  // Convert Data URL to Blob
+  
   const dataURLtoBlob = (dataURL) => {
     const byteString = atob(dataURL.split(",")[1]);
     const mimeString = dataURL.split(",")[0].split(":")[1].split(";")[0];
