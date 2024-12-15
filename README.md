@@ -1,5 +1,5 @@
 
-# Mask of Image
+# Mask of Image generator
 
 A brief description of what this project does and who it's for
 
