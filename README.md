@@ -40,7 +40,23 @@ Please be carefull , if any kind of dependency issue is occured then please use 
 npm install react@17.0.2 react-dom@17.0.2
 ```
 and 
+pease copy and edit the main.jsx folder with
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import App from './App.jsx';
+import './index.css';
 
+// Use ReactDOM.render for React 17
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root')
+);
+
+```
 Start the server
 
 ```bash
