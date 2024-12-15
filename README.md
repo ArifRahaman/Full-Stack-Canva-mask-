@@ -1,5 +1,5 @@
 
-# Project Title
+# Mask of Image
 
 A brief description of what this project does and who it's for
 
